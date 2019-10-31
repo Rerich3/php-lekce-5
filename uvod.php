@@ -11,13 +11,19 @@ public function  __construct($products, $price, $customer)
     $this->price = $price;
     $this->customer =$customer;
 }
-}
-$products = ['pracka AEG', 'Zehlicka Zanussi'];
-$order1 = new Order($products, 12000, 'Josef Novak');
+public function productCount(){
+    return count($this->$products);}
+    public function productCount()
+    {echo count($this->$products);
+    }
 
-print $order1 ->customer;
-print $order1->products[0,1]
-foreach ($order1->products as $item){
+//$products = ['pracka AEG', 'Zehlicka Zanussi'];
+$order = new Order(['pracka AEG', 'Zehlicka Zanussi'], 12000, 'Josef Novak');
+
+echo $order->productCount();
+
+print $order ->customer;
+foreach ($order->products as $item){
     echo $item;
     echo '<br>';
 }
@@ -29,4 +35,4 @@ foreach ($order1->products as $item){
 
 //zapisanie tohto na 1 riadok
 
-$order1 ->price = $order1->price - 100;
+$order ->price = $order->price - 100;
